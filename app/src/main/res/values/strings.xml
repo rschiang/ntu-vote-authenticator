@@ -19,7 +19,7 @@
 
     <string name="title_main">身份驗證</string>
     <string name="placeholder_station_name">人文大樓</string>
-    <string name="hint_station_name">投票所 / Station</string>
+    <string name="hint_station_name">投票所</string>
     <string name="prompt_waiting_device">偵測 NFC 狀態中</string>
     <string name="prompt_scan_card">請掃描學生證</string>
     <string name="prompt_enable_nfc">啟用 NFC 功能以繼續</string>

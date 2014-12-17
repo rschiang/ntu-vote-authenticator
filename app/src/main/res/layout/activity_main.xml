@@ -5,38 +5,48 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/station_image"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:scaleType="centerCrop"
-        android:src="@drawable/venue" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="@dimen/hero_text_margin"
-        android:background="@color/accent_color">
+        android:layout_weight="3">
 
-        <TextView
-            android:id="@+id/station_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/headline_leading"
-            android:text="@string/placeholder_station_name"
-            style="@style/AppText.Headline.Inverse"
-            />
+        <ImageView
+            android:id="@+id/station_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/venue" />
 
-        <TextView
-            android:id="@+id/station_prompt"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/headline_section"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/station_name"
-            android:text="@string/hint_station_name"
-            style="@style/AppText.Inverse"
-            />
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="@dimen/hero_text_margin"
+            android:paddingRight="@dimen/hero_text_margin"
+            android:orientation="vertical"
+            android:background="@color/accent_color">
+
+            <TextView
+                android:id="@+id/station_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/hero_text_margin"
+                android:layout_marginBottom="@dimen/headline_leading"
+                android:text="@string/placeholder_station_name"
+                style="@style/AppText.Headline.Inverse"
+                />
+
+            <TextView
+                android:id="@+id/station_prompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/headline_vertical_margin"
+                android:text="@string/hint_station_name"
+                style="@style/AppText.Inverse"
+                />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
