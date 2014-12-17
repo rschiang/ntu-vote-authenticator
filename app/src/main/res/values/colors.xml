@@ -4,6 +4,10 @@
     <color name="accent_color">#5cb5c2</color>
     <color name="accent_color_dark">#313547</color>
 
-    <color name="text_color">#deffffff</color>
-    <color name="text_display_color">#8affffff</color>
+    <color name="text_color">#de000000</color>
+    <color name="text_display_color">#8a000000</color>
+    <color name="text_color_inverse">#deffffff</color>
+    <color name="text_display_color_inverse">#8affffff</color>
+
+    <color name="background_color">#ffffff</color>
 </resources>

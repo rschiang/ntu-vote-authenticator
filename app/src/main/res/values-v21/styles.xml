@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="android:Theme.Material">
+    <style name="AppTheme" parent="android:Theme.Material.Light">
         <item name="android:colorPrimary">@color/accent_color_dark</item>
         <item name="android:colorPrimaryDark">@color/accent_color</item>
         <item name="android:colorAccent">@color/accent_color</item>
         <item name="android:statusBarColor">@color/accent_color</item>
+
+        <item name="android:textAppearance">@style/AppText</item>
+        <item name="android:textAppearanceInverse">@style/AppText.Inverse</item>
+        <item name="android:textAppearanceButton">@style/AppText.Button</item>
+        <item name="android:actionBarStyle">@style/AppActionBar</item>
+        <item name="android:editTextStyle">@style/AppText.Field</item>
     </style>
 
 </resources>

@@ -51,7 +51,7 @@ public class ConfirmActivity extends Activity implements Callback<Api.NewVoteRes
     }
 
     public void onReportButtonClicked(View view) {
-        super.onBackPressed();
+      super.onBackPressed();
     }
 
     public void onConfirmButtonClicked(View view) {

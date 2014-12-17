@@ -62,7 +62,7 @@
             android:layout_weight="1"
             android:text="@string/action_report"
             android:onClick="onReportButtonClicked"
-            style="@style/AppButton" />
+            />
 
         <Button
             android:id="@+id/confirm_button"
@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:text="@string/action_confirm"
             android:onClick="onConfirmButtonClicked"
-            style="@style/AppButton" />
+            />
 
         <Button
             android:id="@+id/done_button"
@@ -81,7 +81,7 @@
             android:text="@string/action_done"
             android:onClick="onDoneButtonClicked"
             android:visibility="gone"
-            style="@style/AppButton" />
+            />
 
     </LinearLayout>
 

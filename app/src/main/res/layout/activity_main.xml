@@ -26,7 +26,7 @@
             android:layout_marginRight="@dimen/hero_text_margin"
             android:layout_marginBottom="@dimen/hero_text_leading"
             android:text="@string/placeholder_station_name"
-            style="@style/AppText.Headline"
+            style="@style/AppText.Headline.Inverse"
             />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_marginRight="@dimen/hero_text_margin"
             android:layout_marginBottom="@dimen/hero_text_margin"
             android:text="@string/hint_station_name"
-            style="@style/AppText"
+            style="@style/AppText.Inverse"
             />
 
     </RelativeLayout>
@@ -69,7 +69,7 @@
             android:text="@string/action_configure_nfc"
             android:onClick="onOpenSettingsButtonClicked"
             android:visibility="gone"
-            style="@style/AppButton" />
+            />
 
     </RelativeLayout>
 
