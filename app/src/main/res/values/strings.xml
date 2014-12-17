@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">電子投票：數位驗證</string>
+
+    <string name="action_ok">確定</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_retry">重試</string>
+    <string name="action_continue">繼續</string>
+    <string name="action_done">完成</string>
+    <string name="action_login">登入</string>
+    <string name="action_logout">登出</string>
+    <string name="action_report">舉報</string>
+    <string name="action_confirm">確認</string>
+    <string name="action_settings">設定</string>
+    <string name="action_about">關於</string>
+
+    <string name="title_main">數位驗證</string>
+    <string name="placeholder_station_name">不知道</string>
+    <string name="hint_station_name">投票所 / Booth</string>
+    <string name="prompt_waiting_device">偵測 NFC 狀態中</string>
+    <string name="prompt_scan_card">請掃描學生證</string>
+    <string name="prompt_enable_nfc">啟用 NFC 功能以繼續</string>
+    <string name="action_configure_nfc">開啟 NFC 設定</string>
+
+    <string name="title_login">登入</string>
+    <string name="hint_station_user">投票所</string>
+    <string name="hint_station_pass">安全密碼</string>
+
+    <string name="title_confirm_identity">確認身份</string>
+    <string name="prompt_confirm_identity">請核對選舉人</string>
+    <string name="placeholder_user_id">（學號）</string>
+    <string name="placeholder_ticket_type">（電子投票）</string>
+
+    <string name="prompt_tag_id">卡片編號：%s</string>
+    <string name="prompt_user_id">學號：%s</string>
+    <string name="prompt_booth_id">請至 %s 號平板投票</string>
+    <string name="prompt_booth_unavailable">平板忙線中，請稍待</string>
+
+    <string name="title_report">舉報選舉人</string>
+    <string name="prompt_report">確定要舉報選舉人？將會自動聯繫選務中心。</string>
+
+    <string name="title_login_failed">登入失敗</string>
+    <string name="prompt_login_failed">投票所資訊不正確，請重試。</string>
+
+    <string name="title_generic_error">驗證錯誤</string>
+    <string name="prompt_generic_error">目前無法驗證您的身份。請聯絡選務中心。</string>
+
+    <string name="title_network_error">無法連線</string>
+    <string name="prompt_network_error">請在確認網路暢通後，再試一次。</string>
+
+    <string name="title_server_error">伺服器錯誤</string>
+    <string name="prompt_server_error">目前無法連線到伺服器。請聯絡選務中心。</string>
+
+    <string name="title_external_error">外部系統錯誤</string>
+    <string name="prompt_external_error">伺服器無法正常與外部系統連線。請聯絡選務中心。</string>
+
+    <string name="title_version_not_supported">版本不相容</string>
+    <string name="prompt_version_not_supported">伺服器已不再支援此版本的程式。請聯絡選務中心更新軟體。</string>
+
+    <string name="title_service_closed">選舉已結束</string>
+    <string name="prompt_service_closed">目前無法進行投票。請聯絡選務中心。</string>
+
+    <string name="title_insufficient_code">授權碼用罄</string>
+    <string name="prompt_insufficient_code">目前無法進行投票。請聯絡選務中心。</string>
+
+    <string name="title_card_error">卡片讀取失敗</string>
+    <string name="prompt_card_error">無法讀取卡片，請檢查卡片是否毀損。</string>
+
+    <string name="title_card_not_supported">卡片不相容</string>
+    <string name="prompt_card_not_supported">此裝置與卡片不相容，請聯絡選務中心更換裝置。</string>
+
+    <string name="title_card_invalid">卡片無效</string>
+    <string name="prompt_card_invalid">讀取的卡片並非有效的學生證，請確認卡片是否偽造或毀損。</string>
+
+    <string name="title_card_suspicious">卡片資料不符</string>
+    <string name="prompt_card_suspicious">讀取的卡片與登記資料不符，請檢查卡片是否偽造。</string>
+
+    <string name="title_already_voted">持卡人已投票</string>
+    <string name="prompt_already_voted">卡片或派發的授權碼已被使用。感謝您的參與。</string>
+
+    <string name="title_unqualified">持卡人資格不符</string>
+    <string name="prompt_unqualified">卡片持有者不具有此次選舉的選舉人資格。感謝您的參與。</string>
+
+</resources>

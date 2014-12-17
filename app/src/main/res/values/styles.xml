@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.DeviceDefault">
+        <item name="android:actionBarStyle">@style/AppActionBar</item>
+    </style>
+
+    <style name="AppActionBar" parent="android:Widget.DeviceDefault.ActionBar">
+        <item name="android:background">@color/accent_color_dark</item>
+    </style>
+
+    <style name="AppText" parent="android:TextAppearance.DeviceDefault">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">true</item>
+    </style>
+    
+    <style name="AppText.Headline">
+        <item name="android:textSize">24sp</item>
+    </style>
+    
+    <style name="AppText.Subhead">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppText.Display">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@color/text_display_color</item>
+    </style>
+
+    <style name="AppText.Field" parent="android:Widget.DeviceDefault.EditText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginBottom">@dimen/field_vertical_margin</item>
+    </style>
+
+    <style name="AppText.FieldLabel" parent="android:TextAppearance.Holo.Small">
+        <item name="android:textColor">@color/accent_color</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppButton" parent="android:Widget.DeviceDefault.Button">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

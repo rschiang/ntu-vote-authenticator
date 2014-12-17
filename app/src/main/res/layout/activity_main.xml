@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+        <ImageView
+            android:id="@+id/station_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/venue" />
+
+        <TextView
+            android:id="@+id/station_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/station_prompt"
+            android:layout_marginLeft="@dimen/hero_text_margin"
+            android:layout_marginRight="@dimen/hero_text_margin"
+            android:layout_marginBottom="@dimen/hero_text_leading"
+            android:text="@string/placeholder_station_name"
+            style="@style/AppText.Headline"
+            />
+
+        <TextView
+            android:id="@+id/station_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/station_image"
+            android:layout_marginLeft="@dimen/hero_text_margin"
+            android:layout_marginRight="@dimen/hero_text_margin"
+            android:layout_marginBottom="@dimen/hero_text_margin"
+            android:text="@string/hint_station_name"
+            style="@style/AppText"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/prompt_text"
+            android:text="@string/prompt_waiting_device"
+            style="@style/AppText.Display"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/button_configure_nfc"
+            android:text="@string/action_configure_nfc"
+            android:onClick="onOpenSettingsButtonClicked"
+            android:visibility="gone"
+            style="@style/AppButton" />
+
+    </RelativeLayout>
+
+</LinearLayout>
