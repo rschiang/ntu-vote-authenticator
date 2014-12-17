@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">電子投票：數位驗證</string>
+    <string name="app_name">身份驗證</string>
     <string name="app_title">電子投票身份驗證系統</string>
     <string name="app_subtitle">國立臺灣大學學生會選舉罷免執行委員會</string>
 
@@ -17,9 +17,9 @@
     <string name="action_settings">設定</string>
     <string name="action_about">關於</string>
 
-    <string name="title_main">數位驗證</string>
-    <string name="placeholder_station_name">不知道</string>
-    <string name="hint_station_name">投票所 / Booth</string>
+    <string name="title_main">身份驗證</string>
+    <string name="placeholder_station_name">人文大樓</string>
+    <string name="hint_station_name">投票所 / Station</string>
     <string name="prompt_waiting_device">偵測 NFC 狀態中</string>
     <string name="prompt_scan_card">請掃描學生證</string>
     <string name="prompt_enable_nfc">啟用 NFC 功能以繼續</string>

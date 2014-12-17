@@ -6,8 +6,8 @@
 
     <color name="text_color">#de000000</color>
     <color name="text_display_color">#8a000000</color>
-    <color name="text_color_inverse">#deffffff</color>
-    <color name="text_display_color_inverse">#8affffff</color>
+    <color name="text_color_inverse">#ffffff</color>
+    <color name="text_display_color_inverse">#deffffff</color>
 
     <color name="background_color">#ffffff</color>
 </resources>
