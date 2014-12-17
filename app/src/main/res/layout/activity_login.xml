@@ -15,6 +15,32 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="@dimen/prompt_image_size"
+            android:layout_height="@dimen/prompt_image_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/prompt_image_vertical_margin"
+            android:src="@drawable/vendor_icon"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/headline_leading"
+            android:text="@string/app_subtitle"
+            style="@style/AppText"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/headline_vertical_margin"
+            android:text="@string/app_title"
+            style="@style/AppText.Headline"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

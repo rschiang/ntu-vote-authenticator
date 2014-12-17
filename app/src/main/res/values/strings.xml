@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">電子投票：數位驗證</string>
+    <string name="app_title">電子投票身份驗證系統</string>
+    <string name="app_subtitle">國立臺灣大學學生會選舉罷免執行委員會</string>
 
     <string name="action_ok">確定</string>
     <string name="action_cancel">取消</string>

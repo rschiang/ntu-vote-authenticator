@@ -4,7 +4,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="hero_text_margin">16dp</dimen>
     <dimen name="hero_text_leading">24sp</dimen>
-    <dimen name="prompt_image_size">96dp</dimen>
+    <dimen name="prompt_image_size">88dp</dimen>
     <dimen name="field_vertical_margin">8dp</dimen>
     <dimen name="avatar_image_size">216dp</dimen>
+    <dimen name="prompt_image_vertical_margin">16dp</dimen>
+    <dimen name="headline_leading">8dp</dimen>
+    <dimen name="headline_vertical_margin">26dp</dimen>
 </resources>
