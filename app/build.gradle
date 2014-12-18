@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        ntuosc {
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion '21.1.1'
     defaultConfig {
@@ -9,10 +13,11 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        signingConfig signingConfigs.ntuosc
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
