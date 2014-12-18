@@ -36,6 +36,7 @@
 
     <string name="prompt_tag_id">卡片編號：%s</string>
     <string name="prompt_user_id">學號：%s</string>
+    <string name="prompt_auth_code_received">準備派送授權碼</string>
     <string name="prompt_booth_id">請至 %s 號平板投票</string>
     <string name="prompt_booth_unavailable">平板忙線中，請稍待</string>
 

@@ -90,8 +90,10 @@ public class ConfirmActivity extends Activity {
         @Override
         public void success(Api.AuthConfirmResponse authConfirmResponse, Response response) {
             parent.mAuthCode = authConfirmResponse.code;
-
             Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Auth code %s", parent.mAuthCode));
+
+            ((TextView) parent.findViewById(R.id.prompt_text))
+                    .setText(R.string.prompt_auth_code_received);
             Api.getVoteService().newVote(API_KEY, parent.mStationId, parent.mAuthCode, parent.mNewVoteHandler);
         }
 
