@@ -1,7 +1,9 @@
 package org.ntuosc.ext.voteauth;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -62,6 +64,34 @@ public class ConfirmActivity extends Activity {
     }
 
     public void onReportButtonClicked(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        if (mAuthCode != null) {
+            builder.setTitle(R.string.title_cancel_vote);
+            builder.setMessage(R.string.prompt_cancel_vote);
+        }
+        else {
+            builder.setTitle(R.string.title_report);
+            builder.setMessage(R.string.prompt_report);
+        }
+        builder.setPositiveButton(R.string.action_continue, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.dismiss();
+                doReport();
+            }
+        });
+        builder.setNegativeButton(R.string.action_cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void doReport() {
         if (mAuthCode != null) {
             super.onBackPressed();
         }

@@ -41,7 +41,10 @@
     <string name="prompt_booth_unavailable">平板忙線中，請稍待</string>
 
     <string name="title_report">舉報選舉人</string>
-    <string name="prompt_report">確定要舉報選舉人？將會自動聯繫選務中心。</string>
+    <string name="prompt_report">確定要舉報此人？選舉人身份將被鎖定且無法投票。</string>
+
+    <string name="title_cancel_vote">放棄投票</string>
+    <string name="prompt_cancel_vote">確定要放棄投票？授權碼將被拋棄且無法復原。</string>
 
     <string name="title_login_failed">登入失敗</string>
     <string name="prompt_login_failed">投票所資訊不正確，請重試。</string>
