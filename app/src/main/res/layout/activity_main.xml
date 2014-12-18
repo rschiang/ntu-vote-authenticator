@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/hint_station_name"
             android:src="@drawable/venue" />
 
         <LinearLayout
@@ -72,6 +73,7 @@
             android:text="@string/action_configure_nfc"
             android:onClick="onOpenSettingsButtonClicked"
             android:visibility="gone"
+            style="?android:buttonBarButtonStyle"
             />
 
     </RelativeLayout>

@@ -24,7 +24,7 @@ public final class AppConfig {
 
     public static final String ENDPOINT_VOTE_URL = "https://ntuvote.org/api/";
 
-    public static final String ENDPOINT_AUTH_URL = "http://104.236.48.149/api/";
+    public static final String ENDPOINT_AUTH_URL = "http://vote.ntuosc.org/api/";
 
     public static final int CODE_SUCCESS = 0;
 

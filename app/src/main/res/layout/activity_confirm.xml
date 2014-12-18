@@ -57,8 +57,8 @@
         android:id="@+id/button_row"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle">
 
         <Button
             android:id="@+id/report_button"
@@ -67,6 +67,7 @@
             android:layout_weight="1"
             android:text="@string/action_report"
             android:onClick="onReportButtonClicked"
+            style="?android:buttonBarButtonStyle"
             />
 
         <Button
@@ -76,6 +77,7 @@
             android:layout_weight="1"
             android:text="@string/action_confirm"
             android:onClick="onConfirmButtonClicked"
+            style="?android:buttonBarButtonStyle"
             />
 
         <Button
@@ -86,6 +88,7 @@
             android:text="@string/action_done"
             android:onClick="onDoneButtonClicked"
             android:visibility="gone"
+            style="?android:buttonBarButtonStyle"
             />
 
     </LinearLayout>
