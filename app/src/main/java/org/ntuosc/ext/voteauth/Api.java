@@ -35,13 +35,41 @@ public class Api {
                 @Field("uid") String uid,
                 Callback<AuthResponse> callback);
 
+        @FormUrlEncoded
+        @POST("/confirm")
+        void confirm(
+                @Field("api_key") String apiKey,
+                @Field("version") String protocolVersion,
+                @Field("uid") String uid,
+                @Field("token") String token,
+                @Field("station") Integer stationId,
+                Callback<AuthConfirmResponse> callback);
+
+        @FormUrlEncoded
+        @POST("/report")
+        void report(
+                @Field("api_key") String apiKey,
+                @Field("version") String protocolVersion,
+                @Field("uid") String uid,
+                @Field("token") String token,
+                @Field("station") Integer stationId,
+                Callback<AuthReportResponse> callback);
     }
 
     public class AuthResponse {
         public String status;
-        public String code;
+        public String token;
         public String uid;
         public String type;
+    }
+
+    public class AuthConfirmResponse {
+        public String status;
+        public String code;
+    }
+
+    public class AuthReportResponse {
+        public String status;
     }
 
     public class AuthError {

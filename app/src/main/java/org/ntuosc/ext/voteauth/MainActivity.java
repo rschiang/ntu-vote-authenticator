@@ -190,8 +190,8 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
 
     @Override
     public void success(Api.AuthResponse authResponse, Response response) {
-        Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Auth code %s", authResponse.code));
-        ConfirmActivity.startInstance(this, authResponse.uid, authResponse.type, authResponse.code);
+        Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Auth token %s", authResponse.token));
+        ConfirmActivity.startInstance(this, authResponse.uid, authResponse.type, authResponse.token);
     }
 
     @Override
