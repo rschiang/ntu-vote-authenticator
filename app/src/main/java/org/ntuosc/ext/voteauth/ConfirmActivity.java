@@ -62,7 +62,12 @@ public class ConfirmActivity extends Activity {
     }
 
     public void onReportButtonClicked(View view) {
-      Api.getAuthService().report(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthReportHandler);
+        if (mAuthCode != null) {
+            super.onBackPressed();
+        }
+        else {
+            Api.getAuthService().report(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthReportHandler);
+        }
     }
 
     public void onConfirmButtonClicked(View view) {
@@ -94,6 +99,8 @@ public class ConfirmActivity extends Activity {
 
             ((TextView) parent.findViewById(R.id.prompt_text))
                     .setText(R.string.prompt_auth_code_received);
+            ((Button) parent.findViewById(R.id.report_button))
+                    .setText(R.string.action_cancel);
             Api.getVoteService().newVote(API_KEY, parent.mStationId, parent.mAuthCode, parent.mNewVoteHandler);
         }
 
