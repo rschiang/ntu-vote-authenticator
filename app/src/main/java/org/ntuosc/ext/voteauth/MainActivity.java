@@ -85,6 +85,7 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
     @Override
     protected void onPause() {
         disableNfcDispatch();
+        hideLoadingIndicator();
         super.onPause();
     }
 
@@ -136,6 +137,7 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
     public void onTagRead(TagReadingTask.Result result) {
         if (result.code == CODE_SUCCESS) {
             Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Tag %s read", result.uid));
+            showLoadingIndicator();
 
             SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             Api.getAuthService().authenticate(AppConfig.API_KEY, "1",
@@ -188,14 +190,25 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
         }
     }
 
+    public void showLoadingIndicator() {
+        ((TextView) findViewById(R.id.prompt_text)).setText(R.string.prompt_connecting);
+        ((ProgressBar) findViewById(R.id.indicator)).setVisibility(View.VISIBLE);
+    }
+
+    public void hideLoadingIndicator() {
+        ((ProgressBar) findViewById(R.id.indicator)).setVisibility(View.GONE);
+    }
+
     @Override
     public void success(Api.AuthResponse authResponse, Response response) {
+        hideLoadingIndicator();
         Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Auth token %s", authResponse.token));
         ConfirmActivity.startInstance(this, authResponse.uid, authResponse.type, authResponse.token);
     }
 
     @Override
     public void failure(RetrofitError error) {
+        hideLoadingIndicator();
         try {
             Api.AuthError errorResponse = (Api.AuthError) error.getBodyAs(Api.AuthError.class);
             if (errorResponse.reason.equals("duplicate_entry")) {

@@ -29,7 +29,7 @@
     <string name="hint_station_user">投票所</string>
     <string name="hint_station_pass">密碼</string>
 
-    <string name="prompt_connecting">連線到伺服器⋯⋯</string>
+    <string name="prompt_connecting">正在連線</string>
 
     <string name="title_confirm_identity">確認身分</string>
     <string name="prompt_confirm_identity">請核對選舉人</string>

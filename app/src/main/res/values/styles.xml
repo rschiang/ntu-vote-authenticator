@@ -58,4 +58,6 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="AppLoadingIndicator" parent="android:Widget.DeviceDefault.Light.ProgressBar.Large">
+    </style>
 </resources>

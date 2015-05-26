@@ -57,13 +57,22 @@
         android:layout_weight="2"
         android:orientation="vertical">
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/indicator"
+            android:visibility="gone"
+            style="@style/AppLoadingIndicator"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/prompt_text"
             android:text="@string/prompt_waiting_device"
-            style="@style/AppText.Display"/>
+            style="@style/AppText.Display" />
 
         <Button
             android:layout_width="match_parent"
