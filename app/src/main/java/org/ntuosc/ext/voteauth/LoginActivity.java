@@ -73,7 +73,7 @@ public class LoginActivity extends Activity implements Callback<Api.StationRegis
                 .putString(PREF_STATION_PASS, password)
                 .commit();
 
-        Api.getAuthService().register(API_KEY, username, password, this);
+        Api.getAuthService().register(API_KEY, API_VERSION, username, password, this);
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.app.*;
 import android.content.*;
 import android.net.Uri;
 import android.nfc.*;
+import android.os.Handler;
 import android.util.Log;
 import android.view.*;
 import android.widget.*;
@@ -22,6 +23,10 @@ import static org.ntuosc.ext.voteauth.AppConfig.*;
 
 public class MainActivity extends Activity implements ErrorFragment.Listener, Callback<Api.AuthResponse> {
     private int REQUEST_LOGIN = 1;
+
+    Handler handler = new Handler();
+
+    PingTask periodicPing = new PingTask(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,12 +91,14 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
     protected void onPause() {
         disableNfcDispatch();
         hideLoadingIndicator();
+        periodicPing.clearCallback();
         super.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        periodicPing.runCallback();
         enableNfcDispatch();
     }
 

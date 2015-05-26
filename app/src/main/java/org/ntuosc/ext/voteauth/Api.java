@@ -57,16 +57,20 @@ public class Api {
 
         @FormUrlEncoded
         @POST("/station/register")
-        void register(@Field("api_key") String apiKey,
-                   @Field("username") String username,
-                   @Field("password") String password,
-                   Callback<StationRegisterResponse> callback);
+        void register(
+                @Field("api_key") String apiKey,
+                @Field("version") String protocolVersion,
+                @Field("username") String username,
+                @Field("password") String password,
+                Callback<StationRegisterResponse> callback);
 
         @FormUrlEncoded
         @POST("/station/ping")
-        void ping(@Field("api_key") String apiKey,
-                   @Field("token") String sessionToken,
-                   Callback<StationPingResponse> callback);
+        void ping(
+                @Field("api_key") String apiKey,
+                @Field("version") String protocolVersion,
+                @Field("token") String sessionToken,
+                Callback<StationPingResponse> callback);
     }
 
     public class AuthResponse {

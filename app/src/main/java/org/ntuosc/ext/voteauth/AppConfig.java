@@ -22,6 +22,8 @@ public final class AppConfig {
 
     public static final String API_KEY = Private.API_KEY;
 
+    public static final String API_VERSION = "1";
+
     public static final int CODE_NFC_REQUEST = 200;
 
     public static final String ENDPOINT_VOTE_URL = "https://ntuvote.org/api/";
@@ -61,5 +63,9 @@ public final class AppConfig {
     public static final int CODE_SERVICE_CLOSED = 599;
 
     public static final String DEFAULT_ENCODING = "UTF-8";
+
+    public static final String NONE = "";
+
+    public static final int PING_INTERVAL = 15000;
 
 }
