@@ -32,8 +32,8 @@ public class TagReadingTask extends AsyncTask<Tag, Integer, TagReadingTask.Resul
         try {
             card.connect();
 
-            byte block = 0x00;
-            byte[] magic = new byte[]{0, 0, 0, 0, 0, 0, 0, 0};
+            byte block = Private.CARD_BLOCK;
+            byte[] magic = Private.CARD_MAGIC;
 
             if (card.authenticateSectorWithKeyA(block, magic)) {
                 byte[] data = card.readBlock(card.sectorToBlock(block));
