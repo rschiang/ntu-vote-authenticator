@@ -62,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/indicator"
+            android:indeterminate="true"
             android:visibility="gone"
             style="@style/AppLoadingIndicator"
             />
