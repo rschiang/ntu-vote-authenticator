@@ -191,12 +191,13 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
     }
 
     public void showLoadingIndicator() {
-        ((TextView) findViewById(R.id.prompt_text)).setText(R.string.prompt_connecting);
-        ((ProgressBar) findViewById(R.id.indicator)).setVisibility(View.VISIBLE);
+        findViewById(R.id.prompt_text).setVisibility(View.GONE);
+        findViewById(R.id.indicator).setVisibility(View.VISIBLE);
     }
 
     public void hideLoadingIndicator() {
-        ((ProgressBar) findViewById(R.id.indicator)).setVisibility(View.GONE);
+        findViewById(R.id.prompt_text).setVisibility(View.VISIBLE);
+        findViewById(R.id.indicator).setVisibility(View.GONE);
     }
 
     @Override
