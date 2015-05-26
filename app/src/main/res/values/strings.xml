@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">身份驗證</string>
-    <string name="app_title">電子投票身份驗證系統</string>
+    <string name="app_name">身分驗證</string>
+    <string name="app_title">電子投票身分驗證系統</string>
     <string name="app_subtitle">國立臺灣大學學生會選舉罷免執行委員會</string>
 
     <string name="action_ok">確定</string>
@@ -17,7 +17,7 @@
     <string name="action_settings">設定</string>
     <string name="action_about">關於</string>
 
-    <string name="title_main">身份驗證</string>
+    <string name="title_main">身分驗證</string>
     <string name="placeholder_station_name">人文大樓</string>
     <string name="hint_station_name">投票所</string>
     <string name="prompt_waiting_device">偵測 NFC 狀態中</string>
@@ -29,7 +29,9 @@
     <string name="hint_station_user">投票所</string>
     <string name="hint_station_pass">密碼</string>
 
-    <string name="title_confirm_identity">確認身份</string>
+    <string name="prompt_connecting">連線到伺服器⋯⋯</string>
+
+    <string name="title_confirm_identity">確認身分</string>
     <string name="prompt_confirm_identity">請核對選舉人</string>
     <string name="placeholder_user_id">（學號）</string>
     <string name="placeholder_ticket_type">（電子投票）</string>
@@ -41,7 +43,7 @@
     <string name="prompt_booth_unavailable">平板忙線中，請稍待</string>
 
     <string name="title_report">舉報選舉人</string>
-    <string name="prompt_report">確定要舉報此人？選舉人身份將被鎖定且無法投票。</string>
+    <string name="prompt_report">確定要舉報此人？選舉人身分將被鎖定且無法投票。</string>
 
     <string name="title_cancel_vote">放棄投票</string>
     <string name="prompt_cancel_vote">確定要放棄投票？授權碼將被拋棄且無法復原。</string>
