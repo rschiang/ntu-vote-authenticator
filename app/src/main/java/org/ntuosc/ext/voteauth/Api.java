@@ -54,6 +54,19 @@ public class Api {
                 @Field("token") String token,
                 @Field("station") Integer stationId,
                 Callback<AuthReportResponse> callback);
+
+        @FormUrlEncoded
+        @POST("/station/register")
+        void register(@Field("api_key") String apiKey,
+                   @Field("username") String username,
+                   @Field("password") String password,
+                   Callback<StationRegisterResponse> callback);
+
+        @FormUrlEncoded
+        @POST("/station/ping")
+        void ping(@Field("api_key") String apiKey,
+                   @Field("token") String sessionToken,
+                   Callback<StationPingResponse> callback);
     }
 
     public class AuthResponse {
@@ -70,6 +83,18 @@ public class Api {
 
     public class AuthReportResponse {
         public String status;
+    }
+
+    public class StationRegisterResponse {
+        public String status;
+        public int station;
+        public String name;
+        public String token;
+    }
+
+    public class StationPingResponse {
+        public String status;
+        public String timestamp;
     }
 
     public class AuthError {
@@ -91,14 +116,6 @@ public class Api {
     }
 
     public interface VoteService {
-
-        @FormUrlEncoded
-        @POST("/account/login")
-        void login(@Field("apikey") String apiKey,
-                   @Field("username") String username,
-                   @Field("password") String password,
-                   Callback<LoginResponse> callback);
-
         @FormUrlEncoded
         @POST("/vote/new")
         void newVote(@Field("apikey") String apiKey,
@@ -106,12 +123,6 @@ public class Api {
                      @Field("authcode") String authCode,
                      Callback<NewVoteResponse> callback);
 
-    }
-
-    public class LoginResponse {
-        @SerializedName("a_id")
-        public int stationId;
-        public String name;
     }
 
     public class NewVoteResponse {

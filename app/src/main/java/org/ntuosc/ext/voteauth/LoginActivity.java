@@ -19,7 +19,7 @@ import retrofit.client.Response;
 
 import static org.ntuosc.ext.voteauth.AppConfig.*;
 
-public class LoginActivity extends Activity implements Callback<Api.LoginResponse> {
+public class LoginActivity extends Activity implements Callback<Api.StationRegisterResponse> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,16 +73,17 @@ public class LoginActivity extends Activity implements Callback<Api.LoginRespons
                 .putString(PREF_STATION_PASS, password)
                 .commit();
 
-        Api.getVoteService().login(API_KEY, username, password, this);
+        Api.getAuthService().register(API_KEY, username, password, this);
     }
 
     @Override
-    public void success(Api.LoginResponse loginResponse, Response response) {
+    public void success(Api.StationRegisterResponse registerResponse, Response response) {
         SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
 
         preferences.edit()
-                .putString(PREF_STATION_NAME, loginResponse.name)
-                .putInt(PREF_STATION_ID, loginResponse.stationId)
+                .putString(PREF_STATION_NAME, registerResponse.name)
+                .putInt(PREF_STATION_ID, registerResponse.station)
+                .putString(PREF_STATION_TOKEN, registerResponse.token)
                 .commit();
 
         setResult(RESULT_OK);
@@ -92,13 +93,13 @@ public class LoginActivity extends Activity implements Callback<Api.LoginRespons
     @Override
     public void failure(RetrofitError error) {
         try {
-            Api.VoteError errorResponse = (Api.VoteError) error.getBodyAs(Api.VoteError.class);
-            if (errorResponse.message.equals("auth fail")) {
+            Api.AuthError errorResponse = (Api.AuthError) error.getBodyAs(Api.AuthError.class);
+            if (errorResponse.reason.equals("unauthorized")) {
                 ErrorFragment.newInstance(this, CODE_LOGIN_FAILED);
             }
             else {
                 Log.w(PACKAGE_NAME, String.format(Locale.getDefault(),
-                        "Login failed with error %s", errorResponse.message));
+                        "Login failed with error %s", errorResponse.reason));
                 ErrorFragment.newInstance(this, CODE_GENERIC_ERROR);
             }
         }

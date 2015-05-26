@@ -18,6 +18,8 @@ public final class AppConfig {
 
     public static final String PREF_STATION_NAME = "stationName";
 
+    public static final String PREF_STATION_TOKEN = "sessionToken";
+
     public static final String API_KEY = "<Your API Key>";
 
     public static final int CODE_NFC_REQUEST = 200;
