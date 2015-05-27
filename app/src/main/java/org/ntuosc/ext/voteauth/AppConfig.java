@@ -68,4 +68,6 @@ public final class AppConfig {
 
     public static final int PING_INTERVAL = 15000;
 
+    public static final int NFC_THROTTLE_INTERVAL = 3000;
+
 }

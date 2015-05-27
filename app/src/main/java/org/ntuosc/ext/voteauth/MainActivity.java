@@ -144,11 +144,21 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
     public void onTagRead(TagReadingTask.Result result) {
         if (result.code == CODE_SUCCESS) {
             Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Tag %s read", result.uid));
+            // Postpone NFC scanning to prevent jam
+            disableNfcDispatch();
             showLoadingIndicator();
 
             SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             Api.getAuthService().authenticate(AppConfig.API_KEY, "1",
                             preferences.getInt(PREF_STATION_ID, 0), result.cid, result.uid, this);
+
+            // Enable NFC scanning later
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    enableNfcDispatch();
+                }
+            }, NFC_THROTTLE_INTERVAL);
         }
         else {
             ErrorFragment.newInstance(this, result.code);
