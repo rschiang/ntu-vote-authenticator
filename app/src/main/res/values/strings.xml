@@ -51,6 +51,9 @@
     <string name="title_login_failed">登入失敗</string>
     <string name="prompt_login_failed">投票所資訊不正確，請重試。</string>
 
+    <string name="title_login_rejected">拒絕登入</string>
+    <string name="prompt_login_rejected">帳號不具有驗證身分的權限。請聯絡選務中心。</string>
+
     <string name="title_generic_error">驗證錯誤</string>
     <string name="prompt_generic_error">目前無法驗證您的身份。請聯絡選務中心。</string>
 

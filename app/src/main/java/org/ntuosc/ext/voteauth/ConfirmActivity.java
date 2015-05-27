@@ -110,7 +110,7 @@ public class ConfirmActivity extends Activity {
             super.onBackPressed();
         }
         else {
-            Api.getAuthService().report(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthReportHandler);
+            Api.getAuthService().report(API_KEY, API_VERSION, mUserId, mAuthToken, mStationId, mAuthReportHandler);
         }
         enableLater(R.id.report_button);
     }
@@ -120,7 +120,7 @@ public class ConfirmActivity extends Activity {
             Api.getVoteService().newVote(API_KEY, mStationId, mAuthCode, mNewVoteHandler);
         }
         else {
-            Api.getAuthService().confirm(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthConfirmHandler);
+            Api.getAuthService().confirm(API_KEY, API_VERSION, mUserId, mAuthToken, mStationId, mAuthConfirmHandler);
         }
         enableLater(R.id.confirm_button);
     }

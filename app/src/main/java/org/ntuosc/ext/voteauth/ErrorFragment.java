@@ -40,6 +40,14 @@ public class ErrorFragment extends DialogFragment {
                         errorCode);
                 break;
 
+            case AppConfig.CODE_LOGIN_REJECTED:
+                fragment = ErrorFragment.newInstance(
+                        activity.getString(R.string.title_login_rejected),
+                        activity.getString(R.string.prompt_login_rejected),
+                        activity.getString(R.string.action_ok),
+                        errorCode);
+                break;
+
             case AppConfig.CODE_GENERIC_ERROR:
                 fragment = ErrorFragment.newInstance(
                         activity.getString(R.string.title_generic_error),

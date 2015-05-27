@@ -97,6 +97,9 @@ public class LoginActivity extends Activity implements Callback<Api.StationRegis
             if (errorResponse.reason.equals("unauthorized")) {
                 ErrorFragment.newInstance(this, CODE_LOGIN_FAILED);
             }
+            else if (errorResponse.reason.equals("forbidden")) {
+                ErrorFragment.newInstance(this, CODE_LOGIN_REJECTED);
+            }
             else {
                 Log.w(PACKAGE_NAME, String.format(Locale.getDefault(),
                         "Login failed with error %s", errorResponse.reason));

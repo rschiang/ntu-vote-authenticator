@@ -48,6 +48,8 @@ public final class AppConfig {
 
     public static final int CODE_UNQUALIFIED = 412;
 
+    public static final int CODE_LOGIN_REJECTED = 499;
+
     public static final int CODE_GENERIC_ERROR = 500;
 
     public static final int CODE_NETWORK_ERROR = 502;
