@@ -28,8 +28,6 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
 
     PingTask periodicPing = new PingTask(this);
 
-    private boolean block_nfc = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,26 +144,11 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
     public void onTagRead(TagReadingTask.Result result) {
         if (result.code == CODE_SUCCESS) {
             Log.i(PACKAGE_NAME, String.format(Locale.getDefault(), "Tag %s read", result.uid));
-            // Postpone API call to prevent jam
-            if (block_nfc) {
-                Toast.makeText(this, R.string.prompt_nfc_throttling, Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            block_nfc = true;
             showLoadingIndicator();
 
             SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             Api.getAuthService().authenticate(AppConfig.API_KEY, "1",
                             preferences.getInt(PREF_STATION_ID, 0), result.cid, result.uid, this);
-
-            // Clear NFC blocking later
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    block_nfc = false;
-                }
-            }, NFC_THROTTLE_INTERVAL);
         }
         else {
             ErrorFragment.newInstance(this, result.code);
@@ -199,7 +182,6 @@ public class MainActivity extends Activity implements ErrorFragment.Listener, Ca
             PendingIntent nfcIntent = PendingIntent.getActivity(this, AppConfig.CODE_NFC_REQUEST,
                     new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
-            block_nfc = false;
             nfc.enableForegroundDispatch(this, nfcIntent, null, null);
             updatePrompt(true);
 
