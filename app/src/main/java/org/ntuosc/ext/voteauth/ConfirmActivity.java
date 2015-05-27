@@ -51,7 +51,7 @@ public class ConfirmActivity extends Activity {
         SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         mStationId = preferences.getInt(PREF_STATION_ID, 0);
 
-        enableConfirmButtonLater();
+        enableLater(R.id.confirm_button);
     }
 
     public static void startInstance(Context context, String userId, String ticketType, String authToken) {
@@ -95,6 +95,16 @@ public class ConfirmActivity extends Activity {
         dialog.show();
     }
 
+    public void enableLater(final int id) {
+        findViewById(id).setEnabled(false);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ((Button) findViewById(id)).setEnabled(true);
+            }
+        }, CONFIRM_THROTTLE_INTERVAL);
+    }
+
     public void doReport() {
         if (mAuthCode != null) {
             super.onBackPressed();
@@ -102,16 +112,7 @@ public class ConfirmActivity extends Activity {
         else {
             Api.getAuthService().report(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthReportHandler);
         }
-    }
-
-    public void enableConfirmButtonLater() {
-        ((Button) findViewById(R.id.confirm_button)).setEnabled(false);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                ((Button) findViewById(R.id.confirm_button)).setEnabled(true);
-            }
-        }, CONFIRM_THROTTLE_INTERVAL);
+        enableLater(R.id.report_button);
     }
 
     public void onConfirmButtonClicked(View view) {
@@ -121,7 +122,7 @@ public class ConfirmActivity extends Activity {
         else {
             Api.getAuthService().confirm(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthConfirmHandler);
         }
-        enableConfirmButtonLater();
+        enableLater(R.id.confirm_button);
     }
 
     public void onDoneButtonClicked(View view) {
