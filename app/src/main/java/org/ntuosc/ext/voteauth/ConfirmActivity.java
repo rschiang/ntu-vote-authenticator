@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class ConfirmActivity extends Activity {
     private String mAuthCode = null;
     private int mStationId = 0;
 
+    private Handler handler = new Handler();
     private NewVoteHandler mNewVoteHandler = new NewVoteHandler(this);
     private AuthConfirmHandler mAuthConfirmHandler = new AuthConfirmHandler(this);
     private AuthReportHandler mAuthReportHandler = new AuthReportHandler(this);
@@ -48,6 +50,8 @@ public class ConfirmActivity extends Activity {
 
         SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         mStationId = preferences.getInt(PREF_STATION_ID, 0);
+
+        enableConfirmButtonLater();
     }
 
     public static void startInstance(Context context, String userId, String ticketType, String authToken) {
@@ -100,6 +104,16 @@ public class ConfirmActivity extends Activity {
         }
     }
 
+    public void enableConfirmButtonLater() {
+        ((Button) findViewById(R.id.confirm_button)).setEnabled(false);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ((Button) findViewById(R.id.confirm_button)).setEnabled(true);
+            }
+        }, CONFIRM_THROTTLE_INTERVAL);
+    }
+
     public void onConfirmButtonClicked(View view) {
         if (mAuthCode != null) {
             Api.getVoteService().newVote(API_KEY, mStationId, mAuthCode, mNewVoteHandler);
@@ -107,6 +121,7 @@ public class ConfirmActivity extends Activity {
         else {
             Api.getAuthService().confirm(API_KEY, "1", mUserId, mAuthToken, mStationId, mAuthConfirmHandler);
         }
+        enableConfirmButtonLater();
     }
 
     public void onDoneButtonClicked(View view) {
