@@ -1,0 +1,10 @@
+package org.ntuosc.ext.voteauth;
+
+final class Private {
+
+    public static final String API_KEY = "<Your API Key>";
+
+    public static final byte CARD_BLOCK = 0x00;
+
+    public static final byte[] CARD_MAGIC = {0, 0, 0, 0, 0, 0, 0, 0};
+}
